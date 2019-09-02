@@ -3,16 +3,16 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 import Head from "../components/ReactHelmet"
 
-const IndexPage = () => {
+const AboutPage = () => {
   return (
     <Layout>
-      <Head title="Home" />
-      <h1>Hello</h1>
+      <Head title="About" />
+      <h1>About Page</h1>
       <p>
-        Need a developer? <Link to="/contact">Contact me.</Link>
+        Click <Link to="/contact">here to contact me</Link>
       </p>
     </Layout>
   )
 }
 
-export default IndexPage
+export default AboutPage
