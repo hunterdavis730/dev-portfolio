@@ -15,56 +15,66 @@ const Navbar = () => {
   `)
 
   return (
-    <div>
-      <header className={navbarStyles.header}>
-        <h1>
-          <Link className={navbarStyles.title} to="/">
-            {data.site.siteMetadata.title}
-          </Link>
-        </h1>
-
-        <nav>
-          <ul className={navbarStyles.navList}>
-            <li>
-              <Link
-                className={navbarStyles.navItem}
-                activeClassName={navbarStyles.activeNavItem}
-                to="/"
-              >
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link
-                className={navbarStyles.navItem}
-                activeClassName={navbarStyles.activeNavItem}
-                to="/about"
-              >
-                About
-              </Link>
-            </li>
-            <li>
-              <Link
-                className={navbarStyles.navItem}
-                activeClassName={navbarStyles.activeNavItem}
-                to="/blog"
-              >
-                Blog
-              </Link>{" "}
-            </li>
-            <li>
-              <Link
-                className={navbarStyles.navItem}
-                activeClassName={navbarStyles.activeNavItem}
-                to="contact"
-              >
-                Contact
-              </Link>
-            </li>
-          </ul>
-        </nav>
-      </header>
-    </div>
+    <header className={navbarStyles.header}>
+      <h1 className={navbarStyles.logo}>Logo</h1>
+      <input
+        type="checkbox"
+        id="nav-toggle"
+        className={navbarStyles.navToggle}
+      ></input>
+      <nav className={navbarStyles.navbar}>
+        <ul className={navbarStyles.navList}>
+          <li className={navbarStyles.navLi}>
+            <Link
+              className={navbarStyles.navItem}
+              activeClassName={navbarStyles.activeNavItem}
+              to="/"
+            >
+              Home
+            </Link>
+          </li>
+          <li className={navbarStyles.navLi}>
+            <Link
+              className={navbarStyles.navItem}
+              activeClassName={navbarStyles.activeNavItem}
+              to="/about"
+            >
+              About
+            </Link>
+          </li>
+          <li className={navbarStyles.navLi}>
+            <Link
+              className={navbarStyles.navItem}
+              activeClassName={navbarStyles.activeNavItem}
+              to="/portfolio"
+            >
+              Portfolio
+            </Link>{" "}
+          </li>
+          <li className={navbarStyles.navLi}>
+            <Link
+              className={navbarStyles.navItem}
+              activeClassName={navbarStyles.activeNavItem}
+              to="/blog"
+            >
+              Blog
+            </Link>
+          </li>
+          <li className={navbarStyles.navLi}>
+            <Link
+              className={navbarStyles.navItem}
+              activeClassName={navbarStyles.activeNavItem}
+              to="/contact"
+            >
+              Contact
+            </Link>
+          </li>
+        </ul>
+      </nav>
+      <label htmlFor="nav-toggle" className={navbarStyles.navToggleLabel}>
+        <span></span>
+      </label>
+    </header>
   )
 }
 

@@ -22,8 +22,9 @@ const BlogPage = () => {
   return (
     <Layout>
       <Head title="Blog" />
-      <h2>My Blog</h2>
-      <p>Posts will show up here</p>
+      <h2 className={blogStyles.blogTitle}>Blog</h2>
+      <p>Here are some of the things I have been working on recently</p>
+      <hr></hr>
       <ol className={blogStyles.posts}>
         {data.allContentfulBlogPost.edges.map(index => {
           return (
