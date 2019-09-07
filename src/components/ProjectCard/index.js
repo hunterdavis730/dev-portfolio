@@ -29,7 +29,7 @@ export default function ProjectCard(props) {
   console.log(props)
   const classes = useStyles()
   return (
-    <Card className={classes.textCenter}>
+    <Card className={`${classes.textCenter} ${projectStyles.card}`}>
       <CardHeader
         project={true}
         url={props.project.node.mainProjectImage.file.url}

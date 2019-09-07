@@ -1,0 +1,24 @@
+.card {
+  opacity: 0.35;
+  width: 45% !important;
+}
+
+.card:hover {
+  transform: scale(1.05) !important;
+  opacity: 0.7;
+}
+
+.body {
+  h1 {
+    text-align: center;
+  }
+
+  p {
+    text-align: center;
+  }
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+}
