@@ -91,6 +91,12 @@
     border: 0;
     margin-bottom: 0;
   }
+
+  .card:hover {
+    transform: scale(1);
+    border: solid #5968a6 2px;
+    box-shadow: 0 10px 6px -6px black;
+  }
 }
 
 @media only screen and (max-width: 380px) {
