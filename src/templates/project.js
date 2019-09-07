@@ -13,10 +13,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faGithub, faLinkedinIn } from "@fortawesome/free-brands-svg-icons"
 import { CardContent } from "@material-ui/core"
 
+// added comment
+
 export const query = graphql`
   query($slug: String!) {
     contentfulProjectPost(slug: { eq: $slug }) {
       projectTitle
+      githubRepo
+      websiteUrl
       publishedDate(formatString: "MMMM Do, YYYY")
       mainProjectImage {
         file {
@@ -69,22 +73,30 @@ const Project = props => {
         <CardHeader>
           <div className={projectStyles.headerContainer}>
             <h1>{props.data.contentfulProjectPost.projectTitle}</h1>
-            <span>{props.data.contentfulProjectPost.publishedDate}</span>
           </div>
 
-          <div>
+          <div className={projectStyles.imgContainer}>
             <img
               src={props.data.contentfulProjectPost.mainProjectImage.file.url}
             ></img>
 
             <div className={projectStyles.linkButtons}>
-              <a href="https://github.com/hunterdavis730" target="_blank">
+              <a
+                href={props.data.contentfulProjectPost.githubRepo}
+                target="_blank"
+              >
                 <Button>
                   Github
-                  <FontAwesomeIcon icon={faGithub} />
+                  <FontAwesomeIcon
+                    style={{ marginLeft: ".5rem" }}
+                    icon={faGithub}
+                  />
                 </Button>
               </a>
-              <a href="https://begoalden.herokuapp.com/" target="_blank">
+              <a
+                href={props.data.contentfulProjectPost.websiteUrl}
+                target="_blank"
+              >
                 <Button>Visit Site </Button>
               </a>
             </div>
@@ -103,6 +115,7 @@ const Project = props => {
         <CardFooter>
           <div className={projectStyles.techUsed}>
             <h4>Tech Used</h4>
+
             <ul className={projectStyles.linkButtons}>
               {configTech().map(index => {
                 return (
@@ -116,6 +129,9 @@ const Project = props => {
             </ul>
           </div>
         </CardFooter>
+        <span className={projectStyles.published}>
+          {props.data.contentfulProjectPost.publishedDate}
+        </span>
       </Card>
     </Layout>
   )

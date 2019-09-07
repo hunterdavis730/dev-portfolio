@@ -1,12 +1,19 @@
 .techUsed {
+  margin: 0 auto;
+
   h4 {
     margin-top: 6rem;
     text-align: center;
+
+    padding-bottom: 0.5rem;
+    border-bottom: solid #333333 2px;
+    box-shadow: 0 8px 6px -6px black;
   }
 
   ul {
     margin-top: 3rem;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
   }
 
@@ -20,6 +27,7 @@
   justify-content: center;
 
   button {
+    height: 40px;
     margin: 0.75rem;
   }
 }
@@ -28,17 +36,61 @@
   margin-top: 1.25rem;
 }
 
-.card {
-  h1 {
-    margin-top: 1.5rem;
-  }
+.published {
+  margin: 0 0.5rem 0.5rem 0.5rem;
 }
 
 .headerContainer {
-  display: flex;
-  justify-content: space-between;
+  display: block;
+  h1 {
+    text-align: center;
+    margin-bottom: 0;
+    border-bottom: solid #333333 2px;
+    box-shadow: 0 8px 6px -6px black;
+  }
+  margin: 2.5rem;
+}
 
-  span {
-    margin-top: 1.5rem;
+.imgContainer {
+  img {
+    border: solid #5968a6 5px;
+    border-radius: 1.25%;
+    box-shadow: 0 10px 6px -6px black;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .techUsed {
+    width: 100%;
+
+    margin: 0 auto;
+
+    .linkButtons {
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+
+      button {
+        margin: 0.25rem;
+      }
+    }
+  }
+
+  .imgContainer {
+    img {
+      border: solid #5968a6 4x;
+    }
+  }
+
+  .headerContainer {
+    display: block;
+
+    h1 {
+      text-align: center;
+      margin-bottom: 0;
+      border-bottom: solid #333333 2px;
+      box-shadow: 0 8px 6px -6px black;
+    }
+    margin: 1.5rem;
   }
 }
