@@ -3,10 +3,15 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import Head from "../components/ReactHelmet"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
+import Card from "../components/Card/Card.js"
+import CardBody from "../components/Card/CardBody.js"
+import CardHeader from "../components/Card/CardHeader.js"
+import CardFooter from "../components/Card/CardFooter.js"
 import Button from "../components/CustomButtons/Button.js"
 import projectStyles from "./project.module.scss"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faGithub, faLinkedinIn } from "@fortawesome/free-brands-svg-icons"
+import { CardContent } from "@material-ui/core"
 
 export const query = graphql`
   query($slug: String!) {
@@ -60,45 +65,58 @@ const Project = props => {
   return (
     <Layout>
       <Head title={props.data.contentfulProjectPost.projectTitle} />
-      <h1>{props.data.contentfulProjectPost.projectTitle}</h1>
-      <div>
-        <img
-          src={props.data.contentfulProjectPost.mainProjectImage.file.url}
-        ></img>
-        <span>{props.data.contentfulProjectPost.publishedDate}</span>
-        <div className={projectStyles.linkButtons}>
-          <a href="https://github.com/hunterdavis730" target="_blank">
-            <Button>
-              Github
-              <FontAwesomeIcon icon={faGithub} />
-            </Button>
-          </a>
-          <a href="https://begoalden.herokuapp.com/" target="_blank">
-            <Button>Visit Site </Button>
-          </a>
-        </div>
-      </div>
+      <Card className={projectStyles.card}>
+        <CardHeader>
+          <div className={projectStyles.headerContainer}>
+            <h1>{props.data.contentfulProjectPost.projectTitle}</h1>
+            <span>{props.data.contentfulProjectPost.publishedDate}</span>
+          </div>
 
-      <div className={projectStyles.mainContent}>
-        {documentToReactComponents(
-          props.data.contentfulProjectPost.projectDescription.json,
-          options
-        )}
-      </div>
-      <div className={projectStyles.techUsed}>
-        <h4>Tech Used</h4>
-        <ul className={projectStyles.linkButtons}>
-          {configTech().map(index => {
-            return (
-              <li>
-                <a href={index.link} target="_blank">
-                  <Button>{index.techName}</Button>
-                </a>
-              </li>
-            )
-          })}
-        </ul>
-      </div>
+          <div>
+            <img
+              src={props.data.contentfulProjectPost.mainProjectImage.file.url}
+            ></img>
+
+            <div className={projectStyles.linkButtons}>
+              <a href="https://github.com/hunterdavis730" target="_blank">
+                <Button>
+                  Github
+                  <FontAwesomeIcon icon={faGithub} />
+                </Button>
+              </a>
+              <a href="https://begoalden.herokuapp.com/" target="_blank">
+                <Button>Visit Site </Button>
+              </a>
+            </div>
+          </div>
+        </CardHeader>
+
+        <CardContent>
+          <div className={projectStyles.mainContent}>
+            {documentToReactComponents(
+              props.data.contentfulProjectPost.projectDescription.json,
+              options
+            )}
+          </div>
+        </CardContent>
+
+        <CardFooter>
+          <div className={projectStyles.techUsed}>
+            <h4>Tech Used</h4>
+            <ul className={projectStyles.linkButtons}>
+              {configTech().map(index => {
+                return (
+                  <li>
+                    <a href={index.link} target="_blank">
+                      <Button>{index.techName}</Button>
+                    </a>
+                  </li>
+                )
+              })}
+            </ul>
+          </div>
+        </CardFooter>
+      </Card>
     </Layout>
   )
 }

@@ -40,9 +40,7 @@ export default function ProjectCard(props) {
           {props.project.node.projectTitle}
         </h4>
 
-        <p>
-          {props.project.node.shortHook}
-        </p>
+        <p>{props.project.node.shortHook}</p>
         <Button>
           <Link
             className={projectStyles.link}

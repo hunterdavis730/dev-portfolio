@@ -35,7 +35,7 @@ const PortfolioPage = () => {
       <ol className={portfolioStyles.posts}>
         {data.allContentfulProjectPost.edges.map(index => {
           return (
-            <li className={portfolioStyles.posts}>
+            <li className={portfolioStyles.post}>
               <ProjectCard project={index} />
             </li>
           )

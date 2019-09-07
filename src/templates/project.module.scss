@@ -27,3 +27,18 @@
 .mainContent {
   margin-top: 1.25rem;
 }
+
+.card {
+  h1 {
+    margin-top: 1.5rem;
+  }
+}
+
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+
+  span {
+    margin-top: 1.5rem;
+  }
+}

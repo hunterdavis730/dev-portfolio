@@ -1,6 +1,8 @@
 .posts {
   list-style-type: none;
   margin: 4rem 0;
+  display: flex;
+  justify-content: space-around;
 }
 
 .projects {
@@ -10,6 +12,9 @@
 }
 
 .post {
+  width: 45%;
+  height: 580px !important;
+  max-height: 580px !important;
   margin: 5rem 0;
 
   a {
@@ -33,5 +38,43 @@
     font-size: 0.8rem;
     font-style: italic;
     margin-top: 0.8rem;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .posts {
+    list-style-type: none;
+    margin: 4rem 0;
+    display: block;
+  }
+
+  .post {
+    width: 100%;
+    height: 580px !important;
+    max-height: 580px !important;
+    margin: 5rem 0;
+
+    a {
+      background: #f4f4f4;
+      color: #000000;
+      display: block;
+      text-decoration: none;
+      padding: 1rem;
+    }
+
+    a:hover {
+      background: #e4e4e4;
+    }
+
+    h2 {
+      margin-bottom: 0;
+    }
+
+    p {
+      color: #777777;
+      font-size: 0.8rem;
+      font-style: italic;
+      margin-top: 0.8rem;
+    }
   }
 }
