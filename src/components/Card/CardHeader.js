@@ -21,29 +21,12 @@ export default function CardHeader(props) {
     [classes.cardHeaderPlain]: plain,
     [className]: className !== undefined,
   })
-  if (props.project) {
-    return (
-      <img
-        src={props.url}
-        alt="project image"
-        style={{
-          borderRadius: "3px",
-          padding: "1rem 15px",
-          marginLeft: "15px",
-          marginRight: "15px",
-          marginTop: "-30px",
-          border: "0",
-          marginBottom: "0",
-        }}
-      ></img>
-    )
-  } else {
-    return (
-      <div className={cardHeaderClasses} {...rest}>
-        {children}
-      </div>
-    )
-  }
+
+  return (
+    <div className={cardHeaderClasses} {...rest}>
+      {children}
+    </div>
+  )
 }
 
 CardHeader.propTypes = {

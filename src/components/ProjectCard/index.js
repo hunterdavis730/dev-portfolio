@@ -30,25 +30,31 @@ export default function ProjectCard(props) {
   const classes = useStyles()
   return (
     <Card className={`${classes.textCenter} ${projectStyles.card}`}>
-      <CardHeader
-        project={true}
-        url={props.project.node.mainProjectImage.file.url}
-        color="danger"
-      ></CardHeader>
+      <div>
+        <img
+          className={projectStyles.img}
+          src={props.project.node.mainProjectImage.file.url}
+          alt="project image"
+        ></img>
+      </div>
       <CardBody>
-        <h4 className={projectStyles.title}>
-          {props.project.node.projectTitle}
-        </h4>
+        <div className={projectStyles.headInfo}>
+          <div className={projectStyles.content}>
+            <h4 className={projectStyles.title}>
+              {props.project.node.projectTitle}
+            </h4>
 
-        <p>{props.project.node.shortHook}</p>
-        <Button>
-          <Link
-            className={projectStyles.link}
-            to={`/project/${props.project.node.slug}`}
-          >
-            Learn More
-          </Link>
-        </Button>
+            <p>{props.project.node.shortHook}</p>
+          </div>
+          <Button>
+            <Link
+              className={projectStyles.link}
+              to={`/project/${props.project.node.slug}`}
+            >
+              Learn More
+            </Link>
+          </Button>
+        </div>
       </CardBody>
       <CardFooter className={classes.textMuted}>
         {props.project.node.publishedDate}
