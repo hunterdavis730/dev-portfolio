@@ -41,7 +41,7 @@ export default function ProjectCard(props) {
         </h4>
 
         <p>
-          With supporting text below as a natural lead-in to additional content.
+          {props.project.node.shortHook}
         </p>
         <Button>
           <Link

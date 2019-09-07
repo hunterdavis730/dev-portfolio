@@ -1,0 +1,29 @@
+.techUsed {
+  h4 {
+    margin-top: 6rem;
+    text-align: center;
+  }
+
+  ul {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  li {
+    list-style-type: none;
+  }
+}
+
+.linkButtons {
+  display: flex;
+  justify-content: center;
+
+  button {
+    margin: 0.75rem;
+  }
+}
+
+.mainContent {
+  margin-top: 1.25rem;
+}

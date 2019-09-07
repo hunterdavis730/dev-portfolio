@@ -13,6 +13,7 @@ const PortfolioPage = () => {
           node {
             projectTitle
             slug
+            shortHook
             publishedDate(formatString: "MMMM Do, YYYY")
             mainProjectImage {
               file {

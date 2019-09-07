@@ -6,6 +6,7 @@ import { makeStyles } from "@material-ui/core/styles"
 import Card from "../Card/Card.js"
 import CardBody from "../Card/CardBody.js"
 import CardHeader from "../Card/CardHeader.js"
+
 import CardFooter from "../Card/CardFooter.js"
 import Button from "../CustomButtons/Button.js"
 
@@ -35,7 +36,9 @@ export default function HomeCard(props) {
         <p>Full Stack Developer</p>
       </CardBody>
       <CardFooter className={homeCardStyles.footer}>
-        <Button>Enter Site</Button>
+        <Link to="/about">
+          <Button>Enter Site</Button>
+        </Link>
       </CardFooter>
     </Card>
   )
