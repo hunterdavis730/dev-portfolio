@@ -13,6 +13,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faGithub, faLinkedinIn } from "@fortawesome/free-brands-svg-icons"
 import { CardContent } from "@material-ui/core"
 
+// added comment
+
 export const query = graphql`
   query($slug: String!) {
     contentfulProjectPost(slug: { eq: $slug }) {
