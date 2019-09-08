@@ -34,8 +34,8 @@
 }
 
 .card {
-  border-radius: 15% !important;
-  border-radius: 15% !important;
+  // border-radius: 15% !important;
+  // border-radius: 15% !important;
   height: 95% !important;
 }
 
@@ -52,6 +52,7 @@
   width: 350px;
   margin-top: 1.5rem;
   padding: 0;
+  border-radius: 2%;
   border: solid #5968a6 4px;
   box-shadow: 0 10px 6px -6px black;
 }
@@ -82,16 +83,12 @@
   .content {
     margin: 1rem auto;
     height: 175px;
+    padding-bottom: 0;
   }
   .card:hover {
     transform: none;
     border: none;
     box-shadow: 0 10px 6px -6px black;
-  }
-
-  .published {
-    span {
-    }
   }
 }
 

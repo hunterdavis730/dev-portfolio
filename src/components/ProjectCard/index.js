@@ -45,15 +45,15 @@ export default function ProjectCard(props) {
             </h4>
 
             <p>{props.project.node.shortHook}</p>
+            <Button>
+              <Link
+                className={projectStyles.link}
+                to={`/project/${props.project.node.slug}`}
+              >
+                Learn More
+              </Link>
+            </Button>
           </div>
-          <Button>
-            <Link
-              className={projectStyles.link}
-              to={`/project/${props.project.node.slug}`}
-            >
-              Learn More
-            </Link>
-          </Button>
         </div>
       </CardBody>
       <CardFooter className={`${classes.textMuted} ${projectStyles.published}`}>
