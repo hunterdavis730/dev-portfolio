@@ -11,7 +11,7 @@ import Button from "../CustomButtons/Button.js"
 
 import { cardTitle } from "../../assets/jss/material-kit-react.js"
 
-import projectStyles from "./project.module.scss"
+import projectStyles from "./projectCard.module.scss"
 
 const styles = {
   cardTitle,
@@ -56,8 +56,8 @@ export default function ProjectCard(props) {
           </Button>
         </div>
       </CardBody>
-      <CardFooter className={classes.textMuted}>
-        {props.project.node.publishedDate}
+      <CardFooter className={`${classes.textMuted} ${projectStyles.published}`}>
+        <span>{props.project.node.publishedDate}</span>
       </CardFooter>
     </Card>
   )
