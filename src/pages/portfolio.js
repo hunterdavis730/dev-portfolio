@@ -1,9 +1,10 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import Layout from "../components/layout"
 import { Link, graphql, useStaticQuery } from "gatsby"
 import portfolioStyles from "./portfolio.module.scss"
 import Head from "../components/ReactHelmet"
 import ProjectCard from "../components/ProjectCard"
+// import portfolioConfig from "../utils/portfolioConfig"
 
 const PortfolioPage = () => {
   const data = useStaticQuery(graphql`
@@ -20,11 +21,41 @@ const PortfolioPage = () => {
                 url
               }
             }
+            techUsed
           }
         }
       }
     }
   `)
+
+  // const [currentArray, setCurrentArray] = useState(
+  //   data.allContentfulProjectPost.edges
+  // )
+  // const [term, setTerm] = useState("Handlebars.js")
+  // const [category, setCategory] = useState("Tech")
+
+  // useEffect(() => {
+  //   console.log(currentArray)
+  //   switch (category) {
+  //     case "Tech":
+  //       let data = filterSearch(currentArray)
+  //       console.log(data)
+  //       return setCurrentArray(data)
+  //     case "Dates":
+  //       return null
+  //   }
+  // }, [currentArray.length, term])
+
+  // const getTerm = string => {
+  //   setTerm(string)
+  // }
+
+  // const filterSearch = data => {
+  //   let filteredData = portfolioConfig.filterTerm(category, term, data)
+  //   setCurrentArray(filteredData)
+  // }
+
+  // const termSearch = () => {}
 
   return (
     <Layout>

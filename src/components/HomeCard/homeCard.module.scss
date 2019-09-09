@@ -1,11 +1,8 @@
 .card {
-  opacity: 0.35;
-  width: 45% !important;
+  width: 250px;
 }
 
 .card:hover {
-  transform: scale(1.05) !important;
-  opacity: 0.7;
 }
 
 .body {
@@ -15,6 +12,7 @@
 
   p {
     text-align: center;
+    color: black;
   }
 }
 
