@@ -32,14 +32,8 @@ export default function HomeCard(props) {
   return (
     <Card className={homeCardStyles.card}>
       <CardBody className={homeCardStyles.body}>
-        <h1 className={homeCardStyles.header}>{props.homeHeader}</h1>
-        <p>Full Stack Developer</p>
+        <p>{props.text}</p>
       </CardBody>
-      <CardFooter className={homeCardStyles.footer}>
-        <Link to="/about">
-          <Button>Enter Site</Button>
-        </Link>
-      </CardFooter>
     </Card>
   )
 }
